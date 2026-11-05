@@ -1,0 +1,337 @@
+/* popup.css — Canvas Veil (ns canvcdc5, hue 185 pinned). Imports the shared
+   zovo-base token scale (linked before this file) and layers the extension's
+   hue-185 identity over it. Phase 9 stamps the shared file surgically
+   (zovo- → canvcdc5-); this file is namespaced from birth.
+
+   AA ledger (computed, locked):
+     --canvcdc5-primary hsl(185,65%,31%) #1C7A82 — white text 5.06:1 (AA)
+     --canvcdc5-primary-hover hsl(185,68%,26%)  — white text ~6.5:1
+     gold PRO badge  #F59E0B with #1A1A2E text  — 7.94:1 (AA)
+     muted text      light #5B6472 on #fff 5.9:1 · dark #A6AEBC on #12151D 7.1:1
+*/
+:root {
+  --canvcdc5-primary: hsl(185, 65%, 31%);
+  --canvcdc5-primary-hover: hsl(185, 68%, 26%);
+  --canvcdc5-primary-soft: hsl(185, 45%, 93%);
+  --canvcdc5-on-primary: #ffffff;
+  --canvcdc5-gold: #f59e0b;
+  --canvcdc5-on-gold: #1a1a2e;
+
+  --canvcdc5-bg: var(--zovo-bg, #ffffff);
+  --canvcdc5-surface: var(--zovo-surface, #f8f9fa);
+  --canvcdc5-surface-2: var(--zovo-surface-2, #f1f2f4);
+  --canvcdc5-text: var(--zovo-text, #1a1a2e);
+  --canvcdc5-text-2: var(--zovo-text-secondary, #5b6472);
+  --canvcdc5-border: var(--zovo-border, #e5e7eb);
+  --canvcdc5-radius: var(--zovo-radius-btn, 8px);
+  --canvcdc5-radius-card: var(--zovo-radius-card, 12px);
+  --canvcdc5-shadow: var(--zovo-shadow, 0 1px 3px rgba(16, 24, 40, 0.06));
+  --canvcdc5-transition: var(--zovo-transition, 150ms ease-in-out);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --canvcdc5-primary: hsl(185, 60%, 42%); /* white-on-primary 3.0 — used
+        for ACCENTS only in dark; text-bearing buttons keep the light-mode
+        primary pair below via .canvcdc5-btn-on-primary */
+    --canvcdc5-primary-soft: hsl(185, 35%, 16%);
+  }
+}
+
+body {
+  width: var(--zovo-popup-w, 360px);
+  margin: 0;
+  font-family: var(--zovo-font, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif);
+  font-size: var(--zovo-fs-body, 14px);
+  line-height: var(--zovo-lh, 1.5);
+  color: var(--canvcdc5-text);
+  background: var(--canvcdc5-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- header ------------------------------------------------------------- */
+.canvcdc5-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--canvcdc5-border);
+}
+
+.canvcdc5-title {
+  font-weight: var(--zovo-fw-heading, 600);
+  font-size: var(--zovo-fs-subheading, 16px);
+  letter-spacing: -0.01em;
+}
+
+.canvcdc5-tier {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--canvcdc5-on-gold); /* 7.94:1 on gold — AA */
+  background: var(--canvcdc5-gold);
+  border-radius: var(--zovo-radius-pill, 9999px);
+  padding: 2px 8px;
+}
+
+.canvcdc5-main {
+  padding: 16px;
+}
+
+/* ---- hero: the ONE thing the eye lands on -------------------------------- */
+.canvcdc5-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 14px;
+  background: var(--canvcdc5-surface);
+  border: 1px solid var(--canvcdc5-border);
+  border-radius: var(--canvcdc5-radius-card);
+  box-shadow: var(--canvcdc5-shadow);
+}
+
+.canvcdc5-host {
+  font-weight: var(--zovo-fw-medium, 500);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.canvcdc5-toggle-label {
+  margin: 8px 2px 0;
+  color: var(--canvcdc5-text-2);
+  font-size: var(--zovo-fs-caption, 12px);
+}
+
+.canvcdc5-count {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  background: var(--canvcdc5-primary-soft);
+  border-radius: var(--canvcdc5-radius);
+  font-variant-numeric: tabular-nums;
+}
+
+.canvcdc5-hint {
+  margin: 8px 2px 0;
+  color: var(--canvcdc5-text-2);
+  font-size: var(--zovo-fs-caption, 12px);
+}
+
+.canvcdc5-note {
+  margin: 0;
+  padding: 12px;
+  background: var(--canvcdc5-surface);
+  border: 1px solid var(--canvcdc5-border);
+  border-radius: var(--canvcdc5-radius);
+}
+
+/* ---- toggle switch -------------------------------------------------------- */
+.canvcdc5-switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 26px;
+  flex: none;
+}
+
+.canvcdc5-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.canvcdc5-slider {
+  position: absolute;
+  inset: 0;
+  background: var(--canvcdc5-border);
+  border-radius: 9999px;
+  transition: background var(--canvcdc5-transition);
+}
+
+.canvcdc5-slider::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 3px;
+  top: 3px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.18);
+  transition: transform var(--canvcdc5-transition);
+}
+
+.canvcdc5-switch input:checked + .canvcdc5-slider {
+  background: var(--canvcdc5-primary);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .canvcdc5-switch input:checked + .canvcdc5-slider {
+    background: hsl(185, 65%, 31%); /* the AA primary pair, not the accent */
+  }
+}
+
+.canvcdc5-switch input:checked + .canvcdc5-slider::before {
+  transform: translateX(20px);
+}
+
+.canvcdc5-switch input:focus-visible + .canvcdc5-slider {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--canvcdc5-bg),
+    0 0 0 4px var(--canvcdc5-primary);
+}
+
+/* ---- pro row + peek -------------------------------------------------------- */
+.canvcdc5-pro-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 14px;
+  padding: 11px 12px;
+  border: 1px solid var(--canvcdc5-border);
+  border-radius: var(--canvcdc5-radius-card);
+  background: var(--canvcdc5-surface);
+  color: var(--canvcdc5-text);
+  font: inherit;
+  font-weight: var(--zovo-fw-medium, 500);
+  text-align: left;
+  cursor: pointer;
+  transition: background var(--canvcdc5-transition), border-color var(--canvcdc5-transition);
+}
+
+.canvcdc5-pro-row:hover {
+  background: var(--canvcdc5-surface-2);
+}
+
+.canvcdc5-pro-row:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--canvcdc5-bg),
+    0 0 0 4px var(--canvcdc5-primary);
+}
+
+.canvcdc5-pro-row--live {
+  border-color: var(--canvcdc5-primary);
+}
+
+.canvcdc5-lock {
+  font-size: 13px;
+}
+
+.canvcdc5-pro-badge {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--canvcdc5-on-gold); /* 7.94:1 on gold — AA */
+  background: var(--canvcdc5-gold);
+  border-radius: var(--zovo-radius-pill, 9999px);
+  padding: 2px 8px;
+}
+
+.canvcdc5-peek {
+  margin-top: 10px;
+  padding: 14px;
+  border: 1px solid var(--canvcdc5-border);
+  border-radius: var(--canvcdc5-radius-card);
+  background: var(--canvcdc5-bg);
+  box-shadow: var(--canvcdc5-shadow);
+}
+
+.canvcdc5-peek-list {
+  margin: 0 0 12px;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--canvcdc5-text-2);
+  font-size: 13px;
+}
+
+.canvcdc5-peek-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.canvcdc5-upgrade {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 8px 16px;
+  border-radius: var(--canvcdc5-radius);
+  background: var(--canvcdc5-primary); /* white-on-primary 5.06:1 — AA */
+  color: var(--canvcdc5-on-primary);
+  font-weight: var(--zovo-fw-medium, 500);
+  text-decoration: none;
+  transition: background var(--canvcdc5-transition);
+}
+
+.canvcdc5-upgrade:hover {
+  background: var(--canvcdc5-primary-hover);
+}
+
+.canvcdc5-upgrade:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--canvcdc5-bg),
+    0 0 0 4px var(--canvcdc5-primary);
+}
+
+.canvcdc5-maybe {
+  border: 0;
+  background: none;
+  color: var(--canvcdc5-text-2);
+  font: inherit;
+  cursor: pointer;
+  padding: 8px 4px;
+}
+
+.canvcdc5-maybe:hover {
+  color: var(--canvcdc5-text);
+}
+
+.canvcdc5-maybe:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--canvcdc5-bg),
+    0 0 0 4px var(--canvcdc5-primary);
+  border-radius: 4px;
+}
+
+/* ---- footer ---------------------------------------------------------------- */
+.canvcdc5-footer {
+  padding: 10px 16px;
+  border-top: 1px solid var(--canvcdc5-border);
+  text-align: center;
+  font-size: var(--zovo-fs-caption, 12px);
+}
+
+.canvcdc5-footer a {
+  color: var(--canvcdc5-primary);
+  text-decoration: none;
+}
+
+.canvcdc5-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .canvcdc5-footer a {
+    color: hsl(185, 55%, 62%); /* 185-tint link, 7:1 on dark surface */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .canvcdc5-slider,
+  .canvcdc5-slider::before,
+  .canvcdc5-pro-row,
+  .canvcdc5-upgrade {
+    transition: none !important;
+  }
+}

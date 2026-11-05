@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="optionsTitle">Canvas Veil settings</title>
+    <link rel="stylesheet" href="styles/zovo-base.css" />
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <div class="canvcdc5-layout">
+      <aside id="canvcdc5-sidebar" class="canvcdc5-sidebar" aria-label="Canvas Veil">
+        <section class="canvcdc5-sb-card canvcdc5-sb-card--pro" data-canvcdc5-sb="pro" hidden>
+          <div class="canvcdc5-sb-eyebrow" data-i18n="popupProBadge">PRO</div>
+          <h3 class="canvcdc5-sb-h" data-i18n="sbProTitle">Get Canvas Veil Pro</h3>
+          <ul class="canvcdc5-sb-stack">
+            <li data-i18n="popupPeekB1">Same stable fake identity on this site, every visit</li>
+            <li data-i18n="popupPeekB2">Noise strength presets and protection stats</li>
+            <li data-i18n="popupPeekB3">Sync your exceptions across devices</li>
+          </ul>
+          <a
+            class="canvcdc5-sb-cta"
+            href="https://zovo.one/pricing?utm_source=canvas-veil&amp;utm_medium=extension&amp;utm_campaign=upgrade&amp;utm_content=sidebar"
+            target="_blank"
+            rel="noreferrer"
+            data-i18n="popupUpgrade"
+            >See both plans &rarr;</a
+          >
+          <p class="canvcdc5-sb-sub" data-i18n="sbProSub">14-day money-back, no questions.</p>
+        </section>
+
+        <section class="canvcdc5-sb-card" data-canvcdc5-sb="more">
+          <div class="canvcdc5-sb-eyebrow" data-i18n="sbMoreTitle">More tools</div>
+          <a
+            class="canvcdc5-sb-x"
+            href="https://zovo.one?utm_source=canvas-veil&amp;utm_medium=extension"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span data-i18n="sbMoreLink">Browse all tools at zovo.one</span>
+            <span class="canvcdc5-sb-go" aria-hidden="true">&rarr;</span>
+          </a>
+        </section>
+
+        <footer class="canvcdc5-sb-foot">
+          <a href="https://zovo.one/support" target="_blank" rel="noreferrer" data-i18n="sbHelp">Help</a>
+          <a href="https://zovo.one/privacy-policy" target="_blank" rel="noreferrer" data-i18n="sbPrivacy">Privacy</a>
+          <a href="https://zovo.one" target="_blank" rel="noreferrer">zovo.one</a>
+        </footer>
+      </aside>
+
+      <main class="canvcdc5-content" id="canvcdc5-main">
+        <h1 data-i18n="optionsTitle">Canvas Veil settings to protect your canvas</h1>
+
+        <section class="canvcdc5-card" aria-labelledby="canvcdc5-h-auto">
+          <h2 id="canvcdc5-h-auto" data-i18n="optionsAutoExcluded">Captcha and payment keep working</h2>
+          <p class="canvcdc5-muted" data-i18n="optionsAutoExcludedNote">
+            Captcha and payment pages are never hooked, so challenges and checkout keep working.
+          </p>
+          <ul id="canvcdc5-auto-list" class="canvcdc5-host-list"></ul>
+        </section>
+
+        <section class="canvcdc5-card" aria-labelledby="canvcdc5-h-sites">
+          <h2 id="canvcdc5-h-sites" data-i18n="optionsYourSites">Your sites</h2>
+          <p id="canvcdc5-sites-empty" class="canvcdc5-muted" data-i18n="optionsYourSitesEmpty">
+            No per-site exceptions yet. Use the popup toggle on any site.
+          </p>
+          <ul id="canvcdc5-sites-list" class="canvcdc5-host-list"></ul>
+        </section>
+
+        <section class="canvcdc5-card" aria-labelledby="canvcdc5-h-pinned">
+          <h2 id="canvcdc5-h-pinned" data-i18n="optionsPinned">Pinned identities keep one fake per site</h2>
+          <p class="canvcdc5-muted" data-i18n="optionsPinnedNote">
+            Pro pins a stable fake identity per site across sessions. Pin a site from the popup.
+          </p>
+          <p id="canvcdc5-pinned-lock" class="canvcdc5-muted" hidden data-i18n="optionsProLocked">
+            Pro feature
+          </p>
+          <p id="canvcdc5-pinned-empty" class="canvcdc5-muted" hidden data-i18n="optionsPinnedEmpty">
+            No pinned sites yet.
+          </p>
+          <ul id="canvcdc5-pinned-list" class="canvcdc5-host-list"></ul>
+        </section>
+
+        <section class="canvcdc5-card" aria-labelledby="canvcdc5-h-noise">
+          <h2 id="canvcdc5-h-noise" data-i18n="optionsNoise">Noise strength hides your real canvas</h2>
+          <label class="canvcdc5-field" for="canvcdc5-strength">
+            <span data-i18n="optionsStrengthLabel">Noise strength</span>
+            <select id="canvcdc5-strength">
+              <option value="low" data-i18n="optionsStrengthLow">Low</option>
+              <option value="medium" data-i18n="optionsStrengthMedium">Medium</option>
+              <option value="high" data-i18n="optionsStrengthHigh">High</option>
+            </select>
+          </label>
+          <p class="canvcdc5-muted" data-i18n="optionsStrengthNote">
+            Strength applies to new tabs and reloads.
+          </p>
+          <p id="canvcdc5-strength-lock" class="canvcdc5-muted" hidden data-i18n="optionsProLocked">
+            Pro feature
+          </p>
+          <label class="canvcdc5-field" for="canvcdc5-sync">
+            <span data-i18n="optionsSync">Sync exceptions across devices</span>
+            <input id="canvcdc5-sync" type="checkbox" role="switch" />
+          </label>
+          <p class="canvcdc5-muted" data-i18n="optionsSyncNote">
+            Uses your browser's built-in sync. Turning it off removes the synced copy.
+          </p>
+          <p id="canvcdc5-sync-lock" class="canvcdc5-muted" hidden data-i18n="optionsProLocked">
+            Pro feature
+          </p>
+        </section>
+
+        <section class="canvcdc5-card" aria-labelledby="canvcdc5-h-license">
+          <h2 id="canvcdc5-h-license" data-i18n="optionsLicense">License</h2>
+          <p id="canvcdc5-license-status" class="canvcdc5-muted"></p>
+          <div id="canvcdc5-license-form" class="canvcdc5-license-form">
+            <label class="canvcdc5-sr-only" for="canvcdc5-license-key" data-i18n="optionsLicense">
+              License
+            </label>
+            <input
+              id="canvcdc5-license-key"
+              type="text"
+              maxlength="512"
+              autocomplete="off"
+              spellcheck="false"
+              data-i18n-placeholder="optionsLicensePlaceholder"
+              placeholder="ZOVO-XXXX-XXXX-XXXX-XXXX"
+            />
+            <button
+              id="canvcdc5-activate"
+              type="button"
+              data-i18n="optionsActivate"
+              data-i18n-aria="optionsActivateAria"
+              aria-label="Activate Pro license"
+            >
+              Activate
+            </button>
+          </div>
+          <p id="canvcdc5-license-error" class="canvcdc5-error" role="alert" hidden data-i18n="optionsInvalidKey">
+            That key doesn't check out. Check for typos and try again.
+          </p>
+          <button id="canvcdc5-deactivate" type="button" class="canvcdc5-btn-secondary" hidden data-i18n="optionsDeactivate">
+            Remove key
+          </button>
+        </section>
+
+        <section class="canvcdc5-card" aria-labelledby="canvcdc5-h-stats">
+          <h2 id="canvcdc5-h-stats" data-i18n="optionsStats">Stats</h2>
+          <p id="canvcdc5-stats-lock" class="canvcdc5-muted" hidden data-i18n="optionsStatsLocked">
+            Stats history is a Pro feature.
+          </p>
+          <p id="canvcdc5-stats-empty" class="canvcdc5-muted" hidden data-i18n="optionsStatsEmpty">
+            No stats yet.
+          </p>
+          <ul id="canvcdc5-stats-list" class="canvcdc5-host-list"></ul>
+        </section>
+
+        <section class="canvcdc5-card" aria-labelledby="canvcdc5-h-privacy">
+          <h2 id="canvcdc5-h-privacy" data-i18n="optionsPrivacy">Privacy &amp; data</h2>
+          <div class="canvcdc5-row">
+            <button id="canvcdc5-export" type="button" class="canvcdc5-btn-secondary" data-i18n="optionsExport">
+              Export my data (JSON)
+            </button>
+            <button id="canvcdc5-wipe" type="button" class="canvcdc5-danger" data-i18n="optionsWipe">
+              Erase all local data
+            </button>
+          </div>
+        </section>
+
+        <section class="canvcdc5-card" aria-labelledby="canvcdc5-h-about">
+          <h2 id="canvcdc5-h-about" data-i18n="optionsAbout">About</h2>
+          <p class="canvcdc5-muted" data-i18n="optionsAboutBody">
+            Canvas Veil adds stable, per-session noise to 2D canvas reads — the protection
+            itself is 100% local. No analytics, no tracking, no data collection. The only
+            network requests are license checks if you choose to activate Pro (verified once,
+            then re-checked at most once a day).
+          </p>
+          <p class="canvcdc5-muted">
+            <a href="https://zovo.one/privacy-policy" target="_blank" rel="noreferrer"
+              >zovo.one/privacy-policy</a
+            >
+          </p>
+        </section>
+
+        <footer class="canvcdc5-footer">
+          <a href="https://zovo.one" target="_blank" rel="noreferrer">zovo.one</a>
+        </footer>
+      </main>
+    </div>
+
+    <script src="options.js"></script>
+  </body>
+</html>

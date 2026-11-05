@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="obTitle">Protect your canvas with Canvas Veil</title>
+    <link rel="stylesheet" href="styles/zovo-base.css" />
+    <link rel="stylesheet" href="onboarding.css" />
+  </head>
+  <body>
+    <div class="canvcdc5-wrap">
+      <div class="canvcdc5-top">
+        <img class="canvcdc5-mark" src="icons/48.png" alt="" width="30" height="30" />
+        <div class="canvcdc5-brand">
+          <span data-i18n="actionTitle">Canvas Veil</span> <span class="canvcdc5-brand-by">· by Zovo</span>
+        </div>
+        <div class="canvcdc5-rail" id="canvcdc5-rail" aria-hidden="true"></div>
+        <button class="canvcdc5-skip" id="canvcdc5-skip" type="button" data-i18n="obSkip">Skip intro</button>
+      </div>
+
+      <div class="canvcdc5-stage">
+        <section class="canvcdc5-step canvcdc5-on" data-step="0">
+          <div class="canvcdc5-grid">
+            <div>
+              <div class="canvcdc5-eyebrow" data-i18n="obS1T">Canvas fingerprinting, veiled</div>
+              <h1 data-i18n="obS1B">
+                Stop trackers from reading your browser's canvas to fingerprint you. Canvas Veil
+                adds stable noise to those reads, automatically, on every site.
+              </h1>
+            </div>
+            <div class="canvcdc5-visual" aria-hidden="true">
+              <div class="canvcdc5-mockhd"><i></i><i></i><i></i></div>
+              <div class="canvcdc5-motif">
+                <span class="canvcdc5-motif-tile"></span>
+                <span class="canvcdc5-motif-wave"></span>
+              </div>
+              <p class="canvcdc5-visual-cap" data-i18n="obS1Cap">The same canvas. Veiled.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="canvcdc5-step" data-step="1">
+          <div class="canvcdc5-grid">
+            <div>
+              <div class="canvcdc5-eyebrow" data-i18n="obS2T">How it works</div>
+              <h1 class="canvcdc5-h-small" data-i18n="obS2B">
+                Every tab session gets its own random seed, so sites never get a stable read. Each
+                site sees one fake identity per session, and repeated reads still match.
+              </h1>
+            </div>
+            <div class="canvcdc5-visual" aria-hidden="true">
+              <div class="canvcdc5-mockhd"><i></i><i></i><i></i></div>
+              <div class="canvcdc5-bytes">
+                <span class="canvcdc5-bytes-label">read 1</span>
+                <code>7A C1 09 F4 3E 88 B2 61</code>
+              </div>
+              <div class="canvcdc5-bytes">
+                <span class="canvcdc5-bytes-label">read 2</span>
+                <code>7A C1 09 F4 3E 88 B2 61</code>
+                <span class="canvcdc5-bytes-ok">&#10003;</span>
+              </div>
+              <p class="canvcdc5-visual-cap" data-i18n="obS2Cap">Stable within a session, not across sessions.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="canvcdc5-step" data-step="2">
+          <div class="canvcdc5-grid">
+            <div>
+              <div class="canvcdc5-eyebrow" data-i18n="obS3T">One click per site</div>
+              <h1 class="canvcdc5-h-small" data-i18n="obS3B">
+                Need a site to see your real canvas? Flip the toggle in the popup. Captcha and
+                checkout pages are auto-excluded, so they keep working.
+              </h1>
+            </div>
+            <div class="canvcdc5-visual" aria-hidden="true">
+              <div class="canvcdc5-mockhd"><i></i><i></i><i></i></div>
+              <div class="canvcdc5-mockpop">
+                <span class="canvcdc5-mockpop-host">example.com</span>
+                <span class="canvcdc5-mockpop-switch"><span></span></span>
+              </div>
+              <p class="canvcdc5-visual-cap" data-i18n="obS3Cap">The popup toggle, on by default.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="canvcdc5-step" data-step="3">
+          <div class="canvcdc5-center">
+            <div class="canvcdc5-eyebrow" data-i18n="obS4T">Free vs Pro</div>
+            <h1 class="canvcdc5-h-mid" data-i18n="obS4B">
+              Free protects you on every site, forever. A Zovo membership pins a stable identity per
+              site and adds strength presets, stats history, and sync. Two ways in. $4.99/month,
+              cancel anytime. Or $99 once, never pay again · it pays for itself in about 20 months.
+            </h1>
+          </div>
+          <div class="canvcdc5-plans">
+            <div class="canvcdc5-plan">
+              <div class="canvcdc5-plan-name" data-i18n="obS4FreeName">Free</div>
+              <div class="canvcdc5-price" data-i18n="obS4FreePrice">$0</div>
+              <p data-i18n="obS4FreeNote">Full protection on every site, forever.</p>
+            </div>
+            <div class="canvcdc5-plan canvcdc5-plan--hero">
+              <div class="canvcdc5-plan-name canvcdc5-plan-name--pro" data-i18n="popupProBadge">PRO</div>
+              <div class="canvcdc5-price canvcdc5-price--pro" data-i18n="obS4ProPrice">$4.99/month, cancel anytime · $99 once, never pay again</div>
+              <p data-i18n="obS4ProNote">Pinned identities, strength presets, stats history, sync.</p>
+            </div>
+          </div>
+          <p class="canvcdc5-plans-link">
+            <span class="canvcdc5-refund" data-i18n="obS4Refund"
+              >Every plan has a 14-day money-back guarantee, no questions.</span
+            >
+            <a
+              href="https://zovo.one/pricing?utm_source=canvas-veil&amp;utm_medium=extension&amp;utm_campaign=upgrade&amp;utm_content=onboarding"
+              target="_blank"
+              rel="noreferrer"
+              data-i18n="obS4Link"
+              >See both plans at zovo.one</a
+            >
+          </p>
+        </section>
+
+        <section class="canvcdc5-step" data-step="4">
+          <div class="canvcdc5-grid">
+            <div>
+              <div class="canvcdc5-eyebrow" data-i18n="obS5T">No analytics, no tracking, no data collection.</div>
+              <h1 class="canvcdc5-h-small" data-i18n="obS5B">
+                One developer builds Canvas Veil in the open, and keeps it open source.
+                Canvas-noise protection stays 100% local; the only network requests are
+                license checks if you choose to activate Pro (at most once a day).
+              </h1>
+              <p class="canvcdc5-founder">
+                <a
+                  href="https://github.com/theluckystrike"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-i18n="obS5Founder"
+                  >Read the code and reach the developer on GitHub</a
+                >
+              </p>
+            </div>
+            <div class="canvcdc5-visual" aria-hidden="true">
+              <div class="canvcdc5-mockhd"><i></i><i></i><i></i></div>
+              <div class="canvcdc5-trust">
+                <div class="canvcdc5-trow">
+                  <span class="canvcdc5-tico">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+                  </span>
+                  <span data-i18n="obS5P1">Your browsing stays on your device</span>
+                </div>
+                <div class="canvcdc5-trow">
+                  <span class="canvcdc5-tico">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8" opacity="0"/><path d="M2 12h20" opacity="0"/><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
+                  </span>
+                  <span data-i18n="obS5P2">One developer, building in the open</span>
+                </div>
+                <div class="canvcdc5-trow">
+                  <span class="canvcdc5-tico">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg>
+                  </span>
+                  <span data-i18n="obS5P3">Open source, readable in an afternoon</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="canvcdc5-step" data-step="5">
+          <div class="canvcdc5-grid">
+            <div>
+              <div class="canvcdc5-eyebrow" data-i18n="obS6T">You're protected</div>
+              <h1 class="canvcdc5-h-small" data-i18n="obS6B">
+                Browse normally. The toolbar badge keeps count of the noised reads on the current tab.
+              </h1>
+            </div>
+            <div class="canvcdc5-visual" aria-hidden="true">
+              <div class="canvcdc5-mockhd"><i></i><i></i><i></i></div>
+              <div class="canvcdc5-mockbadge">
+                <img src="icons/48.png" alt="" width="34" height="34" />
+                <span class="canvcdc5-mockbadge-n">8</span>
+              </div>
+              <p class="canvcdc5-visual-cap" data-i18n="obS6Cap">Silent protection. Only the counter moves.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="canvcdc5-nav">
+        <button class="canvcdc5-btn-ghost" id="canvcdc5-back" type="button" data-i18n="obBack">Back</button>
+        <span class="canvcdc5-stepno" id="canvcdc5-stepno">1 of 6</span>
+        <span class="canvcdc5-spacer"></span>
+        <button class="canvcdc5-btn-primary" id="canvcdc5-next" type="button" data-i18n="obNext">Continue protecting</button>
+      </div>
+
+      <footer class="canvcdc5-footer">
+        <a href="https://zovo.one" target="_blank" rel="noreferrer">zovo.one</a>
+      </footer>
+    </div>
+
+    <script src="onboarding.js"></script>
+  </body>
+</html>

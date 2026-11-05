@@ -1,0 +1,283 @@
+{
+  "extName": {
+    "message": "Canvas Veil: Canvas Fingerprint Noise",
+    "description": "Extension name (<=75 chars)."
+  },
+  "extDesc": {
+    "message": "Per-session noise for 2D canvas reads to stop fingerprinting. Captcha/checkout excluded. Network only for license verification.",
+    "description": "Manifest description (<=132 chars). Captcha clause is gated on the GATE 2 parity verdict (SPEC §2). Strip it if parity fails."
+  },
+  "actionTitle": {
+    "message": "Canvas Veil",
+    "description": "Toolbar action title / popup title."
+  },
+  "popupProtectionLabel": {
+    "message": "Protection for this site"
+  },
+  "popupCount": {
+    "message": "Canvas reads noised this session: $1",
+    "description": "Per-tab session counter line. $1 = count (positional placeholder only)."
+  },
+  "popupProBadge": {
+    "message": "PRO"
+  },
+  "popupProPin": {
+    "message": "Pin this site's identity"
+  },
+  "popupPeekB1": {
+    "message": "Same stable fake identity on this site, every visit"
+  },
+  "popupPeekB2": {
+    "message": "Noise strength presets and protection stats"
+  },
+  "popupPeekB3": {
+    "message": "Sync your exceptions across devices"
+  },
+  "popupUpgrade": {
+    "message": "See both plans →"
+  },
+  "popupMaybeLater": {
+    "message": "Maybe later"
+  },
+  "popupAppliesLive": {
+    "message": "Applies immediately on this page."
+  },
+  "popupAppliesReload": {
+    "message": "Applies after reload."
+  },
+  "popupPinned": {
+    "message": "Identity pinned for this site"
+  },
+  "popupPinHint": {
+    "message": "Applies from the next load of this site."
+  },
+  "popupUnavailable": {
+    "message": "Not available on this page."
+  },
+  "popupAutoExcluded": {
+    "message": "Auto-excluded (captcha/payment)"
+  },
+  "optionsTitle": {
+    "message": "Canvas Veil settings to protect your canvas"
+  },
+  "optionsAutoExcluded": {
+    "message": "Captcha and payment keep working"
+  },
+  "optionsAutoExcludedNote": {
+    "message": "Captcha and payment pages are never hooked, so challenges and checkout keep working."
+  },
+  "optionsYourSites": {
+    "message": "Your sites"
+  },
+  "optionsYourSitesEmpty": {
+    "message": "No per-site exceptions yet. Use the popup toggle on any site."
+  },
+  "optionsRemove": {
+    "message": "Remove"
+  },
+  "optionsPinned": {
+    "message": "Pinned identities keep one fake per site"
+  },
+  "optionsPinnedNote": {
+    "message": "Pro pins a stable fake identity per site across sessions. Pin a site from the popup."
+  },
+  "optionsPinnedEmpty": {
+    "message": "No pinned sites yet."
+  },
+  "optionsNoise": {
+    "message": "Noise strength hides your real canvas"
+  },
+  "optionsStrengthLabel": {
+    "message": "Noise strength"
+  },
+  "optionsStrengthLow": {
+    "message": "Low"
+  },
+  "optionsStrengthMedium": {
+    "message": "Medium"
+  },
+  "optionsStrengthHigh": {
+    "message": "High"
+  },
+  "optionsStrengthNote": {
+    "message": "Strength applies to new tabs and reloads."
+  },
+  "optionsProLocked": {
+    "message": "Pro feature"
+  },
+  "optionsSync": {
+    "message": "Sync exceptions across devices"
+  },
+  "optionsSyncNote": {
+    "message": "Uses your browser's built-in sync. Turning it off removes the synced copy."
+  },
+  "optionsLicense": {
+    "message": "License"
+  },
+  "optionsLicensePlaceholder": {
+    "message": "ZOVO-XXXX-XXXX-XXXX-XXXX"
+  },
+  "optionsActivate": {
+    "message": "Activate"
+  },
+  "optionsActivateAria": {
+    "message": "Activate Pro license",
+    "description": "aria-label on the activate button. Must START with 'Activate' (extqa L3 rule)."
+  },
+  "optionsDeactivate": {
+    "message": "Remove key"
+  },
+  "optionsProActive": {
+    "message": "Pro active"
+  },
+  "optionsInvalidKey": {
+    "message": "That key doesn't check out. Check for typos and try again."
+  },
+  "optionsStats": {
+    "message": "Stats"
+  },
+  "optionsStatsLocked": {
+    "message": "Stats history is a Pro feature."
+  },
+  "optionsStatsEmpty": {
+    "message": "No stats yet."
+  },
+  "optionsPrivacy": {
+    "message": "Privacy & data"
+  },
+  "optionsExport": {
+    "message": "Export my data (JSON)"
+  },
+  "optionsWipe": {
+    "message": "Erase all local data"
+  },
+  "optionsWipeConfirm": {
+    "message": "Erase all Canvas Veil data on this device? This cannot be undone."
+  },
+  "optionsAbout": {
+    "message": "About"
+  },
+  "optionsAboutBody": {
+    "message": "Canvas Veil adds stable, per-session noise to 2D canvas reads — the protection itself is 100% local. No analytics, no tracking, no data collection. The only network requests are license checks if you choose to activate Pro (verified once, then re-checked at most once a day)."
+  },
+  "sbProTitle": {
+    "message": "Get Canvas Veil Pro"
+  },
+  "sbProSub": {
+    "message": "14-day money-back, no questions.",
+    "description": "Sidebar Pro card subline. Risk reversal only; no price in-store (SURFACE-COPY-SPEC)."
+  },
+  "sbMoreTitle": {
+    "message": "More tools"
+  },
+  "sbMoreLink": {
+    "message": "Browse all tools at zovo.one"
+  },
+  "sbHelp": {
+    "message": "Help"
+  },
+  "sbPrivacy": {
+    "message": "Privacy"
+  },
+  "obTitle": {
+    "message": "Protect your canvas with Canvas Veil"
+  },
+  "obS1T": {
+    "message": "Canvas fingerprinting, veiled"
+  },
+  "obS1B": {
+    "message": "Stop trackers from reading your browser's canvas to fingerprint you. Canvas Veil adds stable noise to those reads, automatically, on every site."
+  },
+  "obS2T": {
+    "message": "How it works"
+  },
+  "obS2B": {
+    "message": "Every tab session gets its own random seed, so sites never get a stable read. Each site sees one fake identity per session, and repeated reads still match."
+  },
+  "obS3T": {
+    "message": "One click per site"
+  },
+  "obS3B": {
+    "message": "Need a site to see your real canvas? Flip the toggle in the popup. Captcha and checkout pages are auto-excluded, so they keep working."
+  },
+  "obS4T": {
+    "message": "Free vs Pro"
+  },
+  "obS4B": {
+    "message": "Free protects you on every site, forever. A Zovo membership pins a stable identity per site and adds strength presets, stats history, and sync. Two ways in. $4.99/month, cancel anytime. Or $99 once, never pay again · it pays for itself in about 20 months."
+  },
+  "obS5T": {
+    "message": "No analytics, no tracking, no data collection."
+  },
+  "obS5B": {
+    "message": "One developer builds Canvas Veil in the open, and keeps it open source. Canvas-noise protection stays 100% local; the only network requests are license checks if you choose to activate Pro (at most once a day)."
+  },
+  "obS6T": {
+    "message": "You're protected"
+  },
+  "obS6B": {
+    "message": "Browse normally. The toolbar badge keeps count of the noised reads on the current tab."
+  },
+  "obSkip": {
+    "message": "Skip intro"
+  },
+  "obStepOf": {
+    "message": "$1 of $2",
+    "description": "Onboarding step counter. $1 = current step, $2 = total (positional only)."
+  },
+  "obS1Cap": {
+    "message": "The same canvas. Veiled."
+  },
+  "obS2Cap": {
+    "message": "Stable within a session, not across sessions."
+  },
+  "obS3Cap": {
+    "message": "The popup toggle, on by default."
+  },
+  "obS4FreeName": {
+    "message": "Free"
+  },
+  "obS4FreePrice": {
+    "message": "$0"
+  },
+  "obS4FreeNote": {
+    "message": "Full protection on every site, forever."
+  },
+  "obS4ProPrice": {
+    "message": "$$4.99/month, cancel anytime · $$99 once, never pay again",
+    "description": "'$$' is the literal-$ escape. Full-pitch step only."
+  },
+  "obS4ProNote": {
+    "message": "Pinned identities, strength presets, stats history, sync."
+  },
+  "obS4Link": {
+    "message": "See both plans at zovo.one"
+  },
+  "obS5P1": {
+    "message": "Your browsing stays on your device"
+  },
+  "obS5P2": {
+    "message": "One developer, building in the open"
+  },
+  "obS5P3": {
+    "message": "Open source, readable in an afternoon"
+  },
+  "obS6Cap": {
+    "message": "Silent protection. Only the counter moves."
+  },
+  "obNext": {
+    "message": "Continue protecting"
+  },
+  "obBack": {
+    "message": "Back"
+  },
+  "obDone": {
+    "message": "Done"
+  },
+  "obS4Refund": {
+    "message": "Every plan has a 14-day money-back guarantee, no questions."
+  },
+  "obS5Founder": {
+    "message": "Read the code and reach the developer on GitHub"
+  }
+}

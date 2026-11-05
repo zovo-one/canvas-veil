@@ -1,0 +1,394 @@
+/* options.css — Canvas Veil (ns canvcdc5, hue 185 pinned). Consumes the
+   zovo-base token scale (linked first); IA follows the locked settings-page
+   design (engine/design/settings-page: sidebar rail + card sections).
+
+   AA ledger (computed, locked):
+     primary hsl(185,65%,31%) #1C7A82 — white text 5.06:1 (AA)
+     danger  #DC2626 — white text 4.83:1 (AA)
+     gold    #F59E0B with #1A1A2E text — 7.94:1 (AA)
+     muted   light #5B6472 on #F8F9FA 5.6:1 · dark #A6AEBC on #1A1A2E 6.4:1
+*/
+:root {
+  --canvcdc5-primary: hsl(185, 65%, 31%);
+  --canvcdc5-primary-hover: hsl(185, 68%, 26%);
+  --canvcdc5-primary-soft: hsl(185, 45%, 93%);
+  --canvcdc5-on-primary: #ffffff;
+  --canvcdc5-gold: #f59e0b;
+  --canvcdc5-on-gold: #1a1a2e;
+  --canvcdc5-error: #dc2626;
+  --canvcdc5-error-hover: #b91c1c;
+
+  --canvcdc5-bg: var(--zovo-bg, #ffffff);
+  --canvcdc5-surface: var(--zovo-surface, #f8f9fa);
+  --canvcdc5-surface-2: var(--zovo-surface-2, #f1f2f4);
+  --canvcdc5-text: var(--zovo-text, #1a1a2e);
+  --canvcdc5-text-2: var(--zovo-text-secondary, #5b6472);
+  --canvcdc5-border: var(--zovo-border, #e5e7eb);
+  --canvcdc5-radius: var(--zovo-radius-btn, 8px);
+  --canvcdc5-radius-card: var(--zovo-radius-card, 12px);
+  --canvcdc5-shadow: var(--zovo-shadow, 0 1px 3px rgba(16, 24, 40, 0.06));
+  --canvcdc5-transition: var(--zovo-transition, 150ms ease-in-out);
+}
+
+body {
+  margin: 0;
+  font-family: var(--zovo-font, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif);
+  font-size: var(--zovo-fs-body, 14px);
+  line-height: var(--zovo-lh, 1.5);
+  color: var(--canvcdc5-text);
+  background: var(--canvcdc5-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.canvcdc5-layout {
+  display: flex;
+  max-width: 1024px;
+  margin: 0 auto;
+  gap: 24px;
+  padding: 24px;
+}
+
+/* ---- sidebar (conversion rail; own funnel only — no sibling cross-sell) --- */
+.canvcdc5-sidebar {
+  width: 260px;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: sticky;
+  top: 24px;
+  align-self: flex-start;
+}
+
+.canvcdc5-sb-card {
+  background: var(--canvcdc5-surface);
+  border: 1px solid var(--canvcdc5-border);
+  border-radius: var(--canvcdc5-radius-card);
+  padding: 16px;
+}
+
+.canvcdc5-sb-card--pro {
+  background: var(--canvcdc5-bg);
+  border-color: var(--canvcdc5-gold);
+  box-shadow: var(--canvcdc5-shadow);
+}
+
+.canvcdc5-sb-eyebrow {
+  font-size: 11px;
+  font-weight: var(--zovo-fw-heading, 600);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--canvcdc5-text-2);
+  margin-bottom: 6px;
+}
+
+.canvcdc5-sb-h {
+  font-size: var(--zovo-fs-subheading, 16px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 10px;
+  line-height: 1.25;
+}
+
+.canvcdc5-sb-stack {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 13px;
+  color: var(--canvcdc5-text-2);
+}
+
+.canvcdc5-sb-stack li {
+  padding-left: 20px;
+  position: relative;
+}
+
+.canvcdc5-sb-stack li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  font-weight: 800;
+  color: var(--canvcdc5-primary);
+}
+
+.canvcdc5-sb-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 10px 18px;
+  border-radius: var(--canvcdc5-radius);
+  background: var(--canvcdc5-gold);
+  color: var(--canvcdc5-on-gold); /* 7.94:1 — AA */
+  font-weight: var(--zovo-fw-heading, 600);
+  text-decoration: none;
+  transition: filter var(--canvcdc5-transition);
+}
+
+.canvcdc5-sb-cta:hover {
+  filter: brightness(0.96);
+}
+
+.canvcdc5-sb-sub {
+  font-size: 11.5px;
+  margin: 8px 0 0;
+  text-align: center;
+  color: var(--canvcdc5-text-2);
+}
+
+.canvcdc5-sb-x {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--canvcdc5-text);
+  font-size: 13px;
+}
+
+.canvcdc5-sb-x:hover span:first-child {
+  color: var(--canvcdc5-primary);
+}
+
+.canvcdc5-sb-go {
+  color: var(--canvcdc5-text-2);
+}
+
+.canvcdc5-sb-foot {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  font-size: 11.5px;
+}
+
+.canvcdc5-sb-foot a {
+  color: var(--canvcdc5-text-2);
+  text-decoration: none;
+}
+
+.canvcdc5-sb-foot a:hover {
+  color: var(--canvcdc5-primary);
+}
+
+/* ---- content ----------------------------------------------------------- */
+.canvcdc5-content {
+  flex: 1;
+  min-width: 0;
+  max-width: 768px;
+}
+
+.canvcdc5-content h1 {
+  font-size: var(--zovo-fs-title, 24px);
+  font-weight: var(--zovo-fw-heading, 600);
+  letter-spacing: -0.01em;
+  margin: 0 0 16px;
+}
+
+.canvcdc5-card {
+  background: var(--canvcdc5-surface);
+  border: 1px solid var(--canvcdc5-border);
+  border-radius: var(--canvcdc5-radius-card);
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: var(--canvcdc5-shadow);
+}
+
+.canvcdc5-card h2 {
+  font-size: var(--zovo-fs-subheading, 16px);
+  font-weight: var(--zovo-fw-heading, 600);
+  margin: 0 0 8px;
+}
+
+.canvcdc5-muted {
+  color: var(--canvcdc5-text-2);
+  margin: 4px 0;
+}
+
+.canvcdc5-host-list {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 6px;
+}
+
+.canvcdc5-host-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: var(--canvcdc5-bg);
+  border: 1px solid var(--canvcdc5-border);
+  border-radius: var(--canvcdc5-radius);
+  padding: 6px 10px;
+  font-family: var(--zovo-font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-size: var(--zovo-fs-caption, 12px);
+}
+
+.canvcdc5-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.canvcdc5-field select {
+  padding: 8px 10px;
+  border: 1px solid var(--canvcdc5-border);
+  border-radius: var(--canvcdc5-radius);
+  background: var(--canvcdc5-bg);
+  color: var(--canvcdc5-text);
+  font: inherit;
+}
+
+.canvcdc5-field input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--canvcdc5-primary);
+}
+
+.canvcdc5-license-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.canvcdc5-license-form input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid var(--canvcdc5-border);
+  border-radius: var(--canvcdc5-radius);
+  background: var(--canvcdc5-bg);
+  color: var(--canvcdc5-text);
+  font-family: var(--zovo-font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-size: 13px;
+  transition: border-color var(--canvcdc5-transition), box-shadow var(--canvcdc5-transition);
+}
+
+.canvcdc5-license-form input:focus-visible {
+  outline: none;
+  border-color: var(--canvcdc5-primary);
+  box-shadow: 0 0 0 3px var(--canvcdc5-primary-soft);
+}
+
+button {
+  padding: 8px 16px;
+  border: 0;
+  border-radius: var(--canvcdc5-radius);
+  background: var(--canvcdc5-primary); /* white-on-primary 5.06:1 — AA */
+  color: var(--canvcdc5-on-primary);
+  font: inherit;
+  font-weight: var(--zovo-fw-medium, 500);
+  cursor: pointer;
+  transition: background var(--canvcdc5-transition);
+}
+
+button:hover {
+  background: var(--canvcdc5-primary-hover);
+}
+
+button.canvcdc5-btn-secondary {
+  background: var(--canvcdc5-surface-2);
+  color: var(--canvcdc5-text);
+  border: 1px solid var(--canvcdc5-border);
+}
+
+button.canvcdc5-btn-secondary:hover {
+  background: var(--canvcdc5-border);
+}
+
+.canvcdc5-row-remove {
+  padding: 4px 10px;
+  font-size: var(--zovo-fs-caption, 12px);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--canvcdc5-bg),
+    0 0 0 4px var(--canvcdc5-primary);
+}
+
+.canvcdc5-danger {
+  background: var(--canvcdc5-error); /* white 4.83:1 — AA */
+}
+
+.canvcdc5-danger:hover {
+  background: var(--canvcdc5-error-hover);
+}
+
+.canvcdc5-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.canvcdc5-error {
+  color: var(--canvcdc5-error);
+  margin: 8px 0 0;
+}
+
+.canvcdc5-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.canvcdc5-footer {
+  text-align: center;
+  padding: 12px 0 24px;
+  font-size: var(--zovo-fs-caption, 12px);
+}
+
+.canvcdc5-footer a,
+.canvcdc5-card a {
+  color: var(--canvcdc5-primary);
+}
+
+/* ---- responsive + dark ---------------------------------------------------- */
+@media (max-width: 860px) {
+  .canvcdc5-layout {
+    flex-direction: column;
+  }
+  .canvcdc5-sidebar {
+    width: auto;
+    position: static;
+    order: 2;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --canvcdc5-primary-soft: hsl(185, 35%, 16%);
+  }
+  :root:not([data-theme='light']) .canvcdc5-footer a,
+  :root:not([data-theme='light']) .canvcdc5-card a {
+    color: hsl(185, 55%, 62%); /* 7:1 on dark surface */
+  }
+  :root:not([data-theme='light']) .canvcdc5-sb-stack li::before {
+    color: hsl(185, 55%, 62%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button,
+  .canvcdc5-sb-cta,
+  .canvcdc5-license-form input {
+    transition: none !important;
+  }
+}

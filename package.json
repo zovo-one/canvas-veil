@@ -1,0 +1,33 @@
+{
+  "name": "zovo-canvas-veil",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Canvas Veil \u2014 stable, per-session noise for 2D canvas reads so trackers can't fingerprint you. Zero accounts; network only for optional Pro license verification.",
+  "author": "Zovo <hello@zovo.one>",
+  "license": "MIT",
+  "keywords": [
+    "chrome-extension",
+    "manifest-v3",
+    "mv3",
+    "canvas-fingerprint",
+    "privacy",
+    "local-first"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "build": "tsc --noEmit && vitest run --passWithNoTests && node build.mjs",
+    "dev": "node build.mjs --watch",
+    "icons": "node tools/gen-icons.mjs",
+    "qa:fixture": "node qa/cdp/run-fixture.mjs",
+    "zip": "cd dist && zip -r ../Zovo-Canvas-Veil-v0.2.0.zip . -x '*.DS_Store'"
+  },
+  "devDependencies": {
+    "@types/chrome": "0.0.326",
+    "esbuild": "0.25.4",
+    "playwright-core": "1.61.1",
+    "typescript": "5.8.3",
+    "vitest": "3.2.4"
+  }
+}

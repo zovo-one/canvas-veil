@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="actionTitle">Canvas Veil</title>
+    <link rel="stylesheet" href="styles/zovo-base.css" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="canvcdc5-header">
+      <img src="icons/32.png" alt="" width="20" height="20" />
+      <span class="canvcdc5-title" data-i18n="actionTitle">Canvas Veil</span>
+      <span id="canvcdc5-tier" class="canvcdc5-tier" hidden data-i18n="popupProBadge">PRO</span>
+    </header>
+
+    <main class="canvcdc5-main">
+      <section id="canvcdc5-state-main" class="canvcdc5-state">
+        <div class="canvcdc5-hero">
+          <span id="canvcdc5-host" class="canvcdc5-host"></span>
+          <label class="canvcdc5-switch">
+            <input
+              id="canvcdc5-toggle"
+              type="checkbox"
+              role="switch"
+              data-i18n-aria="popupProtectionLabel"
+              aria-label="Protection for this site"
+            />
+            <span class="canvcdc5-slider"></span>
+          </label>
+        </div>
+        <p class="canvcdc5-toggle-label" data-i18n="popupProtectionLabel">Protection for this site</p>
+        <p id="canvcdc5-count" class="canvcdc5-count"></p>
+        <p id="canvcdc5-hint" class="canvcdc5-hint" hidden></p>
+      </section>
+
+      <section id="canvcdc5-state-excepted" class="canvcdc5-state" hidden>
+        <p class="canvcdc5-note" data-i18n="popupAutoExcluded">Auto-excluded (captcha/payment)</p>
+      </section>
+
+      <section id="canvcdc5-state-unavailable" class="canvcdc5-state" hidden>
+        <p class="canvcdc5-note" data-i18n="popupUnavailable">Not available on this page.</p>
+      </section>
+
+      <button
+        id="canvcdc5-pro-row"
+        class="canvcdc5-pro-row"
+        type="button"
+        data-i18n-aria="popupProPin"
+        aria-label="Pin this site's identity"
+      >
+        <span class="canvcdc5-lock" aria-hidden="true">&#128274;</span>
+        <span data-i18n="popupProPin">Pin this site's identity</span>
+        <span class="canvcdc5-pro-badge" data-i18n="popupProBadge">PRO</span>
+      </button>
+
+      <div id="canvcdc5-peek" class="canvcdc5-peek" hidden>
+        <ul class="canvcdc5-peek-list">
+          <li data-i18n="popupPeekB1">Same stable fake identity on this site, every visit</li>
+          <li data-i18n="popupPeekB2">Noise strength presets and protection stats</li>
+          <li data-i18n="popupPeekB3">Sync your exceptions across devices</li>
+        </ul>
+        <div class="canvcdc5-peek-actions">
+          <a
+            id="canvcdc5-upgrade"
+            class="canvcdc5-upgrade"
+            href="https://zovo.one/pricing?utm_source=canvas-veil&amp;utm_medium=extension&amp;utm_campaign=upgrade&amp;utm_content=popup-pin"
+            target="_blank"
+            rel="noreferrer"
+            data-i18n="popupUpgrade"
+            >See both plans &rarr;</a
+          >
+          <button id="canvcdc5-maybe-later" class="canvcdc5-maybe" type="button" data-i18n="popupMaybeLater">
+            Maybe later
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="canvcdc5-footer">
+      <a href="https://zovo.one" target="_blank" rel="noreferrer">zovo.one</a>
+    </footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
